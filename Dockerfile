@@ -14,4 +14,4 @@ RUN go build -a -installsuffix cgo -o translator server/*.go
 FROM scratch AS runtime
 COPY --from=build /go/src/translator ./
 EXPOSE 5092/tcp
-ENTRYPOINT ["./openapi"]
+ENTRYPOINT ["./translator"]
