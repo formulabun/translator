@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/gorilla/mux v1.8.0
-	go.formulabun.club/srb2kart v0.0.0-20221218173222-160947e93e18
+	go.formulabun.club/srb2kart v0.0.0-20221230121727-74d7ef86b554
 	golang.org/x/oauth2 v0.3.0
 )
 
