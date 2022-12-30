@@ -13,7 +13,7 @@ import (
 	"log"
 	"net/http"
 
-	openapi "GoBun/services/translator/server/go"
+	openapi "go.formulabun.club/translator/server/go"
 )
 
 func main() {

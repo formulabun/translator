@@ -11,7 +11,7 @@ package openapi
 import (
 	"context"
 
-  "GoBun/srb2kart/network"
+  "go.formulabun.club/srb2kart/network"
 )
 
 // DefaultApiService is a service that implements the logic for the DefaultApiServicer
