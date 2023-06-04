@@ -33,6 +33,19 @@ paths:
               schema:
                 $ref: "#/components/schemas/ServerInfo"
 
+  "/files":
+    get:
+      summary: get the installed files
+      description:
+        Returns the PT_TELLFILESNEEDED data from the server containing information about the installed mods
+      responses:
+        "200":
+          description: success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AllFilesNeeded"
+
 components:
   schemas:
 
@@ -40,6 +53,11 @@ components:
       type: array
       items:
         type: number
+
+    AllFilesNeeded:
+      type: array
+      items:
+        type: string
 
     FileNeeded:
       type: array
@@ -78,12 +96,9 @@ components:
           type: number
 
     PlayerInfo:
-      type: object
-      properties:
-        PlayerInfo:
-          type: array
-          items:
-            $ref: "#/components/schemas/PlayerInfoEntry"
+      type: array
+      items:
+        $ref: "#/components/schemas/PlayerInfoEntry"
 
     ServerInfo:
       type: object

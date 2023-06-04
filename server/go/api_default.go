@@ -10,7 +10,6 @@
 package openapi
 
 import (
-	_ "encoding/json"
 	"net/http"
 	"strings"
 )
@@ -49,6 +48,12 @@ func NewDefaultApiController(s DefaultApiServicer, opts ...DefaultApiOption) Rou
 func (c *DefaultApiController) Routes() Routes {
 	return Routes{ 
 		{
+			"FilesGet",
+			strings.ToUpper("Get"),
+			"/files",
+			c.FilesGet,
+		},
+		{
 			"PlayerinfoGet",
 			strings.ToUpper("Get"),
 			"/playerinfo",
@@ -61,6 +66,19 @@ func (c *DefaultApiController) Routes() Routes {
 			c.ServerinfoGet,
 		},
 	}
+}
+
+// FilesGet - get the installed files
+func (c *DefaultApiController) FilesGet(w http.ResponseWriter, r *http.Request) {
+	result, err := c.service.FilesGet(r.Context())
+	// If an error occurred, encode the error with the status code
+	if err != nil {
+		c.errorHandler(w, r, err, &result)
+		return
+	}
+	// If no error, encode the body and the result code
+	EncodeJSONResponse(result.Body, &result.Code, w)
+
 }
 
 // PlayerinfoGet - get the player infomation

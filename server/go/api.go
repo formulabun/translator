@@ -20,6 +20,7 @@ import (
 // The DefaultApiRouter implementation should parse necessary information from the http request,
 // pass the data to a DefaultApiServicer to perform the required actions, then write the service results to the http response.
 type DefaultApiRouter interface { 
+	FilesGet(http.ResponseWriter, *http.Request)
 	PlayerinfoGet(http.ResponseWriter, *http.Request)
 	ServerinfoGet(http.ResponseWriter, *http.Request)
 }
@@ -30,6 +31,7 @@ type DefaultApiRouter interface {
 // while the service implementation can be ignored with the .openapi-generator-ignore file
 // and updated with the logic required for the API.
 type DefaultApiServicer interface { 
+	FilesGet(context.Context) (ImplResponse, error)
 	PlayerinfoGet(context.Context) (ImplResponse, error)
 	ServerinfoGet(context.Context) (ImplResponse, error)
 }

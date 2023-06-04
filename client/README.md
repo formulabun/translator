@@ -78,6 +78,7 @@ All URIs are relative to *http://translator:5092*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**FilesGet**](docs/DefaultApi.md#filesget) | **Get** /files | get the installed files
 *DefaultApi* | [**PlayerinfoGet**](docs/DefaultApi.md#playerinfoget) | **Get** /playerinfo | get the player infomation
 *DefaultApi* | [**ServerinfoGet**](docs/DefaultApi.md#serverinfoget) | **Get** /serverinfo | get the server information
 
@@ -85,7 +86,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [FileNeededInner](docs/FileNeededInner.md)
- - [PlayerInfo](docs/PlayerInfo.md)
  - [PlayerInfoEntry](docs/PlayerInfoEntry.md)
  - [ServerInfo](docs/ServerInfo.md)
 

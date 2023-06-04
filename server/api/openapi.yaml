@@ -3,7 +3,7 @@ info:
   title: Translator service between a srb2kart server and json
   version: 0.0.1
 servers:
-- url: /
+- url: http://translator:5092
 paths:
   /playerinfo:
     get:
@@ -29,11 +29,27 @@ paths:
                 $ref: '#/components/schemas/ServerInfo'
           description: success
       summary: get the server information
+  /files:
+    get:
+      description: Returns the PT_TELLFILESNEEDED data from the server containing
+        information about the installed mods
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AllFilesNeeded'
+          description: success
+      summary: get the installed files
 components:
   schemas:
     CheckSum:
       items:
         type: number
+      type: array
+    AllFilesNeeded:
+      items:
+        type: string
       type: array
     FileNeeded:
       items:
@@ -72,9 +88,34 @@ components:
           type: number
       type: object
     PlayerInfo:
-      items:
-        $ref: '#/components/schemas/PlayerInfoEntry'
-      type: array
+      example:
+        PlayerInfo:
+        - Score: 2.3021358869347655
+          TimeInServer: 7.061401241503109
+          Address:
+          - 6.027456183070403
+          - 6.027456183070403
+          Node: 0.8008281904610115
+          Team: 1.4658129805029452
+          Skin: 5.962133916683182
+          Data: 5.637376656633329
+          Name: Name
+        - Score: 2.3021358869347655
+          TimeInServer: 7.061401241503109
+          Address:
+          - 6.027456183070403
+          - 6.027456183070403
+          Node: 0.8008281904610115
+          Team: 1.4658129805029452
+          Skin: 5.962133916683182
+          Data: 5.637376656633329
+          Name: Name
+      properties:
+        PlayerInfo:
+          items:
+            $ref: '#/components/schemas/PlayerInfoEntry'
+          type: array
+      type: object
     ServerInfo:
       example:
         ActNum: 1.2315135367772556

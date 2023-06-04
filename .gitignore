@@ -3,6 +3,7 @@
 *.a
 *.so
 
+*/.openapi-generator
 # Folders
 _obj
 _test
