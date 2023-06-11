@@ -17,7 +17,7 @@ import (
 // ServerInfo struct for ServerInfo
 type ServerInfo struct {
 	PacketVersion *float32 `json:"PacketVersion,omitempty"`
-	Application []float32 `json:"Application,omitempty"`
+	Application *string `json:"Application,omitempty"`
 	Version *float32 `json:"Version,omitempty"`
 	SubVersion *float32 `json:"SubVersion,omitempty"`
 	NumberOfPlayer *float32 `json:"NumberOfPlayer,omitempty"`
@@ -90,17 +90,17 @@ func (o *ServerInfo) SetPacketVersion(v float32) {
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise.
-func (o *ServerInfo) GetApplication() []float32 {
+func (o *ServerInfo) GetApplication() string {
 	if o == nil || o.Application == nil {
-		var ret []float32
+		var ret string
 		return ret
 	}
-	return o.Application
+	return *o.Application
 }
 
 // GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerInfo) GetApplicationOk() ([]float32, bool) {
+func (o *ServerInfo) GetApplicationOk() (*string, bool) {
 	if o == nil || o.Application == nil {
 		return nil, false
 	}
@@ -116,9 +116,9 @@ func (o *ServerInfo) HasApplication() bool {
 	return false
 }
 
-// SetApplication gets a reference to the given []float32 and assigns it to the Application field.
-func (o *ServerInfo) SetApplication(v []float32) {
-	o.Application = v
+// SetApplication gets a reference to the given string and assigns it to the Application field.
+func (o *ServerInfo) SetApplication(v string) {
+	o.Application = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.

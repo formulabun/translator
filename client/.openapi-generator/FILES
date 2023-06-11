@@ -16,5 +16,4 @@ model_file_needed_inner.go
 model_player_info_entry.go
 model_server_info.go
 response.go
-test/api_default_test.go
 utils.go

@@ -93,51 +93,47 @@ components:
       type: array
     ServerInfo:
       example:
-        ActNum: 1.2315135367772556
+        ActNum: 7.386281948385884
         HttpSource: HttpSource
         FileNeeded:
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.4894159098541704
+          TotalSize: 1.0246457001441578
           MD5:
-          - 6.84685269835264
-          - 6.84685269835264
+          - 1.4894159098541704
+          - 1.4894159098541704
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.4894159098541704
+          TotalSize: 1.0246457001441578
           MD5:
-          - 6.84685269835264
-          - 6.84685269835264
-        IsZone: 1.0246457001441578
+          - 1.4894159098541704
+          - 1.4894159098541704
+        IsZone: 1.2315135367772556
         ModifiedGame: true
         PacketVersion: 0.8008281904610115
-        Time: 2.027123023002322
-        GameType: 7.061401241503109
-        LevelTime: 4.145608029883936
-        KartVars: 9.301444243932576
-        SubVersion: 5.962133916683182
-        MaxPlayers: 2.3021358869347655
+        Time: 3.616076749251911
+        GameType: 2.3021358869347655
+        LevelTime: 2.027123023002322
+        KartVars: 7.061401241503109
+        SubVersion: 1.4658129805029452
+        MaxPlayers: 5.637376656633329
         MapName: MapName
         MapMD5:
-        - 7.386281948385884
-        - 7.386281948385884
+        - 4.145608029883936
+        - 4.145608029883936
         CheatsEnabled: true
-        Version: 1.4658129805029452
-        NumberOfPlayer: 5.637376656633329
+        Version: 6.027456183070403
+        NumberOfPlayer: 5.962133916683182
         ServerName: ServerName
         MapTitle: MapTitle
-        FileNeededNum: 3.616076749251911
-        Application:
-        - 6.027456183070403
-        - 6.027456183070403
+        FileNeededNum: 9.301444243932576
+        Application: Application
         ServerNameRaw: ServerNameRaw
       properties:
         PacketVersion:
           type: number
         Application:
-          items:
-            type: number
-          type: array
+          type: string
         Version:
           type: number
         SubVersion:
@@ -187,10 +183,10 @@ components:
       example:
         WillSend: true
         FileName: FileName
-        TotalSize: 1.4894159098541704
+        TotalSize: 1.0246457001441578
         MD5:
-        - 6.84685269835264
-        - 6.84685269835264
+        - 1.4894159098541704
+        - 1.4894159098541704
       properties:
         WillSend:
           type: boolean

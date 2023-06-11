@@ -11,8 +11,11 @@ package openapi
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
+	"go.formulabun.club/functional/array"
+	"go.formulabun.club/functional/strings"
 	"go.formulabun.club/srb2kart/network"
 )
 
@@ -30,15 +33,15 @@ func NewDefaultApiService(target string) DefaultApiServicer {
 
 // MapsGet - get the installed mods
 func (s *DefaultApiService) FilesGet(ctx context.Context) (ImplResponse, error) {
-  files, err := network.TellAllFilesNeeded(s.Target)
-  if err != nil {
-    return Response(500, nil), err
-  }
+	files, err := network.TellAllFilesNeeded(s.Target)
+	if err != nil {
+		return Response(500, nil), err
+	}
 
-  for i, f := range files {
-    // oops I forgot null terminator in srb2kart/network
-    files[i] = f[:len(f)-2]
-  }
+	for i, f := range files {
+		// oops I forgot null terminator in srb2kart/network
+		files[i] = f[:len(f)-1]
+	}
 	return Response(http.StatusOK, files), nil
 }
 
@@ -49,18 +52,57 @@ func (s *DefaultApiService) PlayerinfoGet(ctx context.Context) (ImplResponse, er
 	if err != nil {
 		return Response(500, nil), err
 	}
+  
+  existingNodes := array.Filter(playerInfo, func(player network.PlayerInfo) bool {
+    return player.Node != 255
+  })
+	players := array.Map(existingNodes, func(player network.PlayerInfo) PlayerInfoEntry {
+		return PlayerInfoEntry{
+			player.Node,
+			strings.SafeNullTerminated(player.Name[:]),
+			strings.Join(array.Map(player.Address[:], func(v uint8) string { return fmt.Sprint(v) }), "."),
+			player.Team,
+			player.Skin,
+			player.Data,
+			player.Score,
+			player.TimeInServer,
+		}
+	})
 
-	return Response(http.StatusOK, playerInfo), nil
+	return Response(http.StatusOK, PlayerInfo{players}), nil
 }
 
 // ServerinfoGet - get the server information
 func (s *DefaultApiService) ServerinfoGet(ctx context.Context) (ImplResponse, error) {
-	serverInfo, _, err := network.GetServerInfo(s.Target)
+	i, _, err := network.AskInfo(s.Target)
 
 	if err != nil {
 		return Response(500, nil), err
 	}
 
-	return Response(http.StatusOK, serverInfo), nil
+  resp := ServerInfo{
+    i.PacketVersion,
+    strings.SafeNullTerminated(i.Application[:]),
+    i.Version,
+    i.Subversion,
+    i.NumberOfPlayer,
+    i.MaxPlayer,
+    i.Gametype,
+    i.ModifiedGame > 0,
+    i.CheatsEnabled > 0,
+    i.KartVars,
+    i.FileNeededNum,
+    i.Time,
+    i.LevelTime,
+    strings.SafeNullTerminated(i.ServerName[:]),
+    strings.SafeNullTerminated(i.MapName[:]),
+    strings.SafeNullTerminated(i.MapTitle[:]),
+    i.MapMd5,
+    i.ActNum,
+    i.IsZone > 0,
+    strings.SafeNullTerminated(i.HttpSource[:]),
+    []FileNeededInner{},
+  }
 
+	return Response(http.StatusOK, resp), nil
 }

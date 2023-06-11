@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PacketVersion** | Pointer to **float32** |  | [optional] 
-**Application** | Pointer to **[]float32** |  | [optional] 
+**Application** | Pointer to **string** |  | [optional] 
 **Version** | Pointer to **float32** |  | [optional] 
 **SubVersion** | Pointer to **float32** |  | [optional] 
 **NumberOfPlayer** | Pointer to **float32** |  | [optional] 
@@ -73,20 +73,20 @@ HasPacketVersion returns a boolean if a field has been set.
 
 ### GetApplication
 
-`func (o *ServerInfo) GetApplication() []float32`
+`func (o *ServerInfo) GetApplication() string`
 
 GetApplication returns the Application field if non-nil, zero value otherwise.
 
 ### GetApplicationOk
 
-`func (o *ServerInfo) GetApplicationOk() (*[]float32, bool)`
+`func (o *ServerInfo) GetApplicationOk() (*string, bool)`
 
 GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplication
 
-`func (o *ServerInfo) SetApplication(v []float32)`
+`func (o *ServerInfo) SetApplication(v string)`
 
 SetApplication sets Application field to given value.
 

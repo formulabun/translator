@@ -11,49 +11,47 @@ package openapi
 
 type ServerInfo struct {
 
-	PacketVersion float32 `json:"PacketVersion,omitempty"`
+	PacketVersion uint8 `json:"PacketVersion"`
 
-	Application []float32 `json:"Application,omitempty"`
+	Application string `json:"Application"`
 
-	Version float32 `json:"Version,omitempty"`
+	Version uint8 `json:"Version"`
 
-	SubVersion float32 `json:"SubVersion,omitempty"`
+	SubVersion uint8 `json:"SubVersion"`
 
-	NumberOfPlayer float32 `json:"NumberOfPlayer,omitempty"`
+	NumberOfPlayer uint8 `json:"NumberOfPlayer"`
 
-	MaxPlayers float32 `json:"MaxPlayers,omitempty"`
+	MaxPlayers uint8 `json:"MaxPlayers"`
 
-	GameType float32 `json:"GameType,omitempty"`
+	GameType uint8 `json:"GameType"`
 
-	ModifiedGame bool `json:"ModifiedGame,omitempty"`
+	ModifiedGame bool `json:"ModifiedGame"`
 
-	CheatsEnabled bool `json:"CheatsEnabled,omitempty"`
+	CheatsEnabled bool `json:"CheatsEnabled"`
 
-	KartVars float32 `json:"KartVars,omitempty"`
+	KartVars uint8 `json:"KartVars"`
 
-	FileNeededNum float32 `json:"FileNeededNum,omitempty"`
+	FileNeededNum uint8 `json:"FileNeededNum"`
 
-	Time float32 `json:"Time,omitempty"`
+	Time uint32 `json:"Time"`
 
-	LevelTime float32 `json:"LevelTime,omitempty"`
+	LevelTime uint32 `json:"LevelTime"`
 
-	ServerNameRaw string `json:"ServerNameRaw,omitempty"`
+	ServerName string `json:"ServerName"`
 
-	ServerName string `json:"ServerName,omitempty"`
+	MapName string `json:"MapName"`
 
-	MapName string `json:"MapName,omitempty"`
+	MapTitle string `json:"MapTitle"`
 
-	MapTitle string `json:"MapTitle,omitempty"`
+	MapMD5 [16]byte `json:"MapMD5"`
 
-	MapMD5 []float32 `json:"MapMD5,omitempty"`
+	ActNum uint8 `json:"ActNum"`
 
-	ActNum float32 `json:"ActNum,omitempty"`
+	IsZone bool `json:"IsZone"`
 
-	IsZone float32 `json:"IsZone,omitempty"`
+	HttpSource string `json:"HttpSource"`
 
-	HttpSource string `json:"HttpSource,omitempty"`
-
-	FileNeeded []FileNeededInner `json:"FileNeeded,omitempty"`
+	FileNeeded []FileNeededInner `json:"FileNeeded"`
 }
 
 // AssertServerInfoRequired checks if the required fields are not zero-ed

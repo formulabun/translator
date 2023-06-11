@@ -106,9 +106,7 @@ components:
         PacketVersion:
           type: number
         Application:
-          type: array
-          items:
-            type: number 
+          type: string
         Version:
           type: number
         SubVersion:
@@ -144,7 +142,7 @@ components:
         ActNum:
           type: number
         IsZone:
-          type: number
+          type: boolean
         HttpSource:
           type: string
         FileNeeded:

@@ -11,21 +11,21 @@ package openapi
 
 type PlayerInfoEntry struct {
 
-	Node float32 `json:"Node,omitempty"`
+	Node uint8 `json:"Node,omitempty"`
 
 	Name string `json:"Name,omitempty"`
 
-	Address []float32 `json:"Address,omitempty"`
+	Address string `json:"Address,omitempty"`
 
-	Team float32 `json:"Team,omitempty"`
+	Team uint8 `json:"Team,omitempty"`
 
-	Skin float32 `json:"Skin,omitempty"`
+	Skin uint8 `json:"Skin,omitempty"`
 
-	Data float32 `json:"Data,omitempty"`
+	Data uint8 `json:"Data,omitempty"`
 
-	Score float32 `json:"Score,omitempty"`
+	Score uint32 `json:"Score,omitempty"`
 
-	TimeInServer float32 `json:"TimeInServer,omitempty"`
+	TimeInServer uint16 `json:"TimeInServer,omitempty"`
 }
 
 // AssertPlayerInfoEntryRequired checks if the required fields are not zero-ed
