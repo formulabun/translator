@@ -35,7 +35,7 @@ func NewDefaultApiService(target string) DefaultApiServicer {
 func (s *DefaultApiService) FilesGet(ctx context.Context) (ImplResponse, error) {
 	files, err := network.TellAllFilesNeeded(s.Target)
 	if err != nil {
-		return Response(500, nil), err
+		return Response(500, err), err
 	}
 
 	for i, f := range files {
@@ -50,7 +50,7 @@ func (s *DefaultApiService) PlayerinfoGet(ctx context.Context) (ImplResponse, er
 	_, playerInfo, err := network.AskInfo(s.Target)
 
 	if err != nil {
-		return Response(500, nil), err
+		return Response(500, err), err
 	}
   
   existingNodes := array.Filter(playerInfo, func(player network.PlayerInfo) bool {
@@ -69,7 +69,7 @@ func (s *DefaultApiService) PlayerinfoGet(ctx context.Context) (ImplResponse, er
 		}
 	})
 
-	return Response(http.StatusOK, PlayerInfo{players}), nil
+	return Response(http.StatusOK, PlayerInfo(players)), nil
 }
 
 // ServerinfoGet - get the server information
@@ -77,7 +77,7 @@ func (s *DefaultApiService) ServerinfoGet(ctx context.Context) (ImplResponse, er
 	i, _, err := network.AskInfo(s.Target)
 
 	if err != nil {
-		return Response(500, nil), err
+		return Response(500, err), err
 	}
 
   resp := ServerInfo{

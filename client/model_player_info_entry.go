@@ -18,7 +18,7 @@ import (
 type PlayerInfoEntry struct {
 	Node *float32 `json:"Node,omitempty"`
 	Name *string `json:"Name,omitempty"`
-	Address []float32 `json:"Address,omitempty"`
+	Address *string `json:"Address,omitempty"`
 	Team *float32 `json:"Team,omitempty"`
 	Skin *float32 `json:"Skin,omitempty"`
 	Data *float32 `json:"Data,omitempty"`
@@ -108,17 +108,17 @@ func (o *PlayerInfoEntry) SetName(v string) {
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
-func (o *PlayerInfoEntry) GetAddress() []float32 {
+func (o *PlayerInfoEntry) GetAddress() string {
 	if o == nil || o.Address == nil {
-		var ret []float32
+		var ret string
 		return ret
 	}
-	return o.Address
+	return *o.Address
 }
 
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PlayerInfoEntry) GetAddressOk() ([]float32, bool) {
+func (o *PlayerInfoEntry) GetAddressOk() (*string, bool) {
 	if o == nil || o.Address == nil {
 		return nil, false
 	}
@@ -134,9 +134,9 @@ func (o *PlayerInfoEntry) HasAddress() bool {
 	return false
 }
 
-// SetAddress gets a reference to the given []float32 and assigns it to the Address field.
-func (o *PlayerInfoEntry) SetAddress(v []float32) {
-	o.Address = v
+// SetAddress gets a reference to the given string and assigns it to the Address field.
+func (o *PlayerInfoEntry) SetAddress(v string) {
+	o.Address = &v
 }
 
 // GetTeam returns the Team field value if set, zero value otherwise.

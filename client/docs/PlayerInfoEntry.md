@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Node** | Pointer to **float32** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Address** | Pointer to **[]float32** |  | [optional] 
+**Address** | Pointer to **string** |  | [optional] 
 **Team** | Pointer to **float32** |  | [optional] 
 **Skin** | Pointer to **float32** |  | [optional] 
 **Data** | Pointer to **float32** |  | [optional] 
@@ -84,20 +84,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetAddress
 
-`func (o *PlayerInfoEntry) GetAddress() []float32`
+`func (o *PlayerInfoEntry) GetAddress() string`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *PlayerInfoEntry) GetAddressOk() (*[]float32, bool)`
+`func (o *PlayerInfoEntry) GetAddressOk() (*string, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *PlayerInfoEntry) SetAddress(v []float32)`
+`func (o *PlayerInfoEntry) SetAddress(v string)`
 
 SetAddress sets Address field to given value.
 

@@ -98,17 +98,17 @@ components:
         FileNeeded:
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.0246457001441578
+          TotalSize: 1.2315135367772556
           MD5:
-          - 1.4894159098541704
-          - 1.4894159098541704
+          - 1.0246457001441578
+          - 1.0246457001441578
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.0246457001441578
+          TotalSize: 1.2315135367772556
           MD5:
-          - 1.4894159098541704
-          - 1.4894159098541704
-        IsZone: 1.2315135367772556
+          - 1.0246457001441578
+          - 1.0246457001441578
+        IsZone: true
         ModifiedGame: true
         PacketVersion: 0.8008281904610115
         Time: 3.616076749251911
@@ -171,7 +171,7 @@ components:
         ActNum:
           type: number
         IsZone:
-          type: number
+          type: boolean
         HttpSource:
           type: string
         FileNeeded:
@@ -183,10 +183,10 @@ components:
       example:
         WillSend: true
         FileName: FileName
-        TotalSize: 1.0246457001441578
+        TotalSize: 1.2315135367772556
         MD5:
-        - 1.4894159098541704
-        - 1.4894159098541704
+        - 1.0246457001441578
+        - 1.0246457001441578
       properties:
         WillSend:
           type: boolean

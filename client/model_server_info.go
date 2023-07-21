@@ -35,7 +35,7 @@ type ServerInfo struct {
 	MapTitle *string `json:"MapTitle,omitempty"`
 	MapMD5 []float32 `json:"MapMD5,omitempty"`
 	ActNum *float32 `json:"ActNum,omitempty"`
-	IsZone *float32 `json:"IsZone,omitempty"`
+	IsZone *bool `json:"IsZone,omitempty"`
 	HttpSource *string `json:"HttpSource,omitempty"`
 	FileNeeded []FileNeededInner `json:"FileNeeded,omitempty"`
 }
@@ -666,9 +666,9 @@ func (o *ServerInfo) SetActNum(v float32) {
 }
 
 // GetIsZone returns the IsZone field value if set, zero value otherwise.
-func (o *ServerInfo) GetIsZone() float32 {
+func (o *ServerInfo) GetIsZone() bool {
 	if o == nil || o.IsZone == nil {
-		var ret float32
+		var ret bool
 		return ret
 	}
 	return *o.IsZone
@@ -676,7 +676,7 @@ func (o *ServerInfo) GetIsZone() float32 {
 
 // GetIsZoneOk returns a tuple with the IsZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerInfo) GetIsZoneOk() (*float32, bool) {
+func (o *ServerInfo) GetIsZoneOk() (*bool, bool) {
 	if o == nil || o.IsZone == nil {
 		return nil, false
 	}
@@ -692,8 +692,8 @@ func (o *ServerInfo) HasIsZone() bool {
 	return false
 }
 
-// SetIsZone gets a reference to the given float32 and assigns it to the IsZone field.
-func (o *ServerInfo) SetIsZone(v float32) {
+// SetIsZone gets a reference to the given bool and assigns it to the IsZone field.
+func (o *ServerInfo) SetIsZone(v bool) {
 	o.IsZone = &v
 }
 

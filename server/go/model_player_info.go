@@ -9,14 +9,11 @@
 
 package openapi
 
-type PlayerInfo struct {
-
-	PlayerInfo []PlayerInfoEntry `json:"PlayerInfo,omitempty"`
-}
+type PlayerInfo []PlayerInfoEntry
 
 // AssertPlayerInfoRequired checks if the required fields are not zero-ed
 func AssertPlayerInfoRequired(obj PlayerInfo) error {
-	for _, el := range obj.PlayerInfo {
+	for _, el := range obj {
 		if err := AssertPlayerInfoEntryRequired(el); err != nil {
 			return err
 		}

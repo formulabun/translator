@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **MapTitle** | Pointer to **string** |  | [optional] 
 **MapMD5** | Pointer to **[]float32** |  | [optional] 
 **ActNum** | Pointer to **float32** |  | [optional] 
-**IsZone** | Pointer to **float32** |  | [optional] 
+**IsZone** | Pointer to **bool** |  | [optional] 
 **HttpSource** | Pointer to **string** |  | [optional] 
 **FileNeeded** | Pointer to [**[]FileNeededInner**](FileNeededInner.md) |  | [optional] 
 
@@ -523,20 +523,20 @@ HasActNum returns a boolean if a field has been set.
 
 ### GetIsZone
 
-`func (o *ServerInfo) GetIsZone() float32`
+`func (o *ServerInfo) GetIsZone() bool`
 
 GetIsZone returns the IsZone field if non-nil, zero value otherwise.
 
 ### GetIsZoneOk
 
-`func (o *ServerInfo) GetIsZoneOk() (*float32, bool)`
+`func (o *ServerInfo) GetIsZoneOk() (*bool, bool)`
 
 GetIsZoneOk returns a tuple with the IsZone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsZone
 
-`func (o *ServerInfo) SetIsZone(v float32)`
+`func (o *ServerInfo) SetIsZone(v bool)`
 
 SetIsZone sets IsZone field to given value.
 

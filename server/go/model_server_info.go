@@ -11,47 +11,47 @@ package openapi
 
 type ServerInfo struct {
 
-	PacketVersion uint8 `json:"PacketVersion"`
+	PacketVersion uint8 `json:"PacketVersion,omitempty"`
 
-	Application string `json:"Application"`
+	Application string `json:"Application,omitempty"`
 
-	Version uint8 `json:"Version"`
+	Version uint8 `json:"Version,omitempty"`
 
-	SubVersion uint8 `json:"SubVersion"`
+	SubVersion uint8 `json:"SubVersion,omitempty"`
 
-	NumberOfPlayer uint8 `json:"NumberOfPlayer"`
+	NumberOfPlayer uint8 `json:"NumberOfPlayer,omitempty"`
 
-	MaxPlayers uint8 `json:"MaxPlayers"`
+	MaxPlayers uint8 `json:"MaxPlayers,omitempty"`
 
-	GameType uint8 `json:"GameType"`
+	GameType uint8 `json:"GameType,omitempty"`
 
-	ModifiedGame bool `json:"ModifiedGame"`
+	ModifiedGame bool `json:"ModifiedGame,omitempty"`
 
-	CheatsEnabled bool `json:"CheatsEnabled"`
+	CheatsEnabled bool `json:"CheatsEnabled,omitempty"`
 
-	KartVars uint8 `json:"KartVars"`
+	KartVars uint8 `json:"KartVars,omitempty"`
 
-	FileNeededNum uint8 `json:"FileNeededNum"`
+	FileNeededNum uint8 `json:"FileNeededNum,omitempty"`
 
-	Time uint32 `json:"Time"`
+	Time uint32 `json:"Time,omitempty"`
 
-	LevelTime uint32 `json:"LevelTime"`
+	LevelTime uint32 `json:"LevelTime,omitempty"`
 
-	ServerName string `json:"ServerName"`
+	ServerNameRaw string `json:"ServerNameRaw,omitempty"`
 
-	MapName string `json:"MapName"`
+	MapName string `json:"MapName,omitempty"`
 
-	MapTitle string `json:"MapTitle"`
+	MapTitle string `json:"MapTitle,omitempty"`
 
-	MapMD5 [16]byte `json:"MapMD5"`
+	MapMD5 [16]byte `json:"MapMD5,omitempty"`
 
-	ActNum uint8 `json:"ActNum"`
+	ActNum uint8 `json:"ActNum,omitempty"`
 
-	IsZone bool `json:"IsZone"`
+	IsZone bool `json:"IsZone,omitempty"`
 
-	HttpSource string `json:"HttpSource"`
+	HttpSource string `json:"HttpSource,omitempty"`
 
-	FileNeeded []FileNeededInner `json:"FileNeeded"`
+	FileNeeded []FileNeededInner `json:"FileNeeded,omitempty"`
 }
 
 // AssertServerInfoRequired checks if the required fields are not zero-ed

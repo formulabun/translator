@@ -57,15 +57,13 @@ components:
       type: array
     PlayerInfoEntry:
       example:
-        Score: 2.3021358869347655
-        TimeInServer: 7.061401241503109
-        Address:
-        - 6.027456183070403
-        - 6.027456183070403
+        Score: 5.637376656633329
+        TimeInServer: 2.3021358869347655
+        Address: Address
         Node: 0.8008281904610115
-        Team: 1.4658129805029452
-        Skin: 5.962133916683182
-        Data: 5.637376656633329
+        Team: 6.027456183070403
+        Skin: 1.4658129805029452
+        Data: 5.962133916683182
         Name: Name
       properties:
         Node:
@@ -73,9 +71,7 @@ components:
         Name:
           type: string
         Address:
-          items:
-            type: number
-          type: array
+          type: string
         Team:
           type: number
         Skin:
@@ -98,17 +94,17 @@ components:
         FileNeeded:
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.0246457001441578
+          TotalSize: 1.2315135367772556
           MD5:
-          - 1.4894159098541704
-          - 1.4894159098541704
+          - 1.0246457001441578
+          - 1.0246457001441578
         - WillSend: true
           FileName: FileName
-          TotalSize: 1.0246457001441578
+          TotalSize: 1.2315135367772556
           MD5:
-          - 1.4894159098541704
-          - 1.4894159098541704
-        IsZone: 1.2315135367772556
+          - 1.0246457001441578
+          - 1.0246457001441578
+        IsZone: true
         ModifiedGame: true
         PacketVersion: 0.8008281904610115
         Time: 3.616076749251911
@@ -171,7 +167,7 @@ components:
         ActNum:
           type: number
         IsZone:
-          type: number
+          type: boolean
         HttpSource:
           type: string
         FileNeeded:
@@ -183,10 +179,10 @@ components:
       example:
         WillSend: true
         FileName: FileName
-        TotalSize: 1.0246457001441578
+        TotalSize: 1.2315135367772556
         MD5:
-        - 1.4894159098541704
-        - 1.4894159098541704
+        - 1.0246457001441578
+        - 1.0246457001441578
       properties:
         WillSend:
           type: boolean

@@ -81,9 +81,7 @@ components:
         Name:
           type: string
         Address:
-          type: array
-          items:
-            type: number
+          type: string
         Team:
           type: number
         Skin:
